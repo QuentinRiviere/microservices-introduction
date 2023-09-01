@@ -1,0 +1,18 @@
+services:
+  service-a:
+    build: './serviceA'
+    ports:
+      - "3000:3000"
+    networks:
+      - some-net
+      
+  service-b:
+    build: './serviceB'
+    ports:
+      - "3001:3001"
+    networks:
+      - some-net
+
+networks:
+  some-net:
+    driver: bridge
